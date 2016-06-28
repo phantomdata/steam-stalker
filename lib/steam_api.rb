@@ -18,7 +18,7 @@ module SteamApi
     uri = "#{BASE_URI}/IPlayerService/GetOwnedGames/v0001"
     params = { steamid: steam_id }
     response = steam_get(uri, params)
-    
+
     response['games']
   end
 
