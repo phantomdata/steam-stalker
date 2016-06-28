@@ -32,8 +32,10 @@ module SteamApi
     response = HTTParty.get(uri, query: params)
 
     unless response.code == 200
-      message = "There was an error fetching from #{uri} with params
-        #{params}.  The resulting error was #{response.body}."
+      message = I18n.translate('.errors.steam_api.http_error',
+                               uri: uri,
+                               params: params,
+                               response_body: response.body)
       raise SteamApiError, message
     end
 
@@ -47,8 +49,9 @@ module SteamApi
     response_json = JSON.parse(response_body)['response']
 
     unless response_json
-      raise SteamApiError,
-            "Invalid response returned by Steam's API as #{response}"
+      message = I18n.translate('.errors.steam_api.json_error',
+                               response_body: response_body)
+      raise SteamApiError, message
     end
 
     response_json
