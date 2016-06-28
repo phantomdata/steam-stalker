@@ -1,24 +1,7 @@
-# README
+# phantom-games
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web application designed to provide a better view into the data that Steam provides.  The primary goals are to provide a simple overview of:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. A player's most played games
+1. A player's latest game playing
+1. Information of the same for a player's specified friends
