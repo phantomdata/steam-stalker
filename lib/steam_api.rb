@@ -1,5 +1,6 @@
 # This module is responsible for retrieving information from the
-# Steam API.
+# Steam API.  Before using this module, be sure to set a STEAM_API_KEY
+# environment variables.
 module SteamApi
   class SteamApiError < StandardError; end
 
@@ -7,7 +8,7 @@ module SteamApi
   BASE_URI = 'http://api.steampowered.com'.freeze
 
   # Queries the Steam API and returns the steam_id for the specified
-  # nickname.
+  # nickname.  This leverages Steam's vanity_url functionality.
   def steam_id_for(nickname)
     uri = "#{BASE_URI}/ISteamUser/ResolveVanityURL/v0001"
     params = {
