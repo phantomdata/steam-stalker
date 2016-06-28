@@ -7,8 +7,33 @@ module SteamApi
   API_KEY = ENV['STEAM_API_KEY']
   BASE_URI = 'http://api.steampowered.com'.freeze
 
+  # This method queries the Steam API and returns a JSON representation of
+  # the given steam_id's entire game library.  Full game info is intentionally
+  # not included in the response, as this method is destined to be used
+  # for displaying a top-games list.
+  #
+  # Return format:
+  #   { "appid": 2200, "playtime_forever": 42 }
+  def all_games_for(steam_id)
+    uri = "#{BASE_URI}/IPlayerService/GetOwnedGames/v0001"
+    params = { steamid: steam_id }
+    response = steam_get(uri, params)
+    
+    response['games']
+  end
+
   # This method queries the Steam API and returns a JSON representation
   # of the given steam_id's recent game history.
+  #
+  # Return format:
+  #   {
+  #     "appid": 220,
+  #     "name": "The Witcher 3",
+  #     "playtime_2weeks": 1290,
+  #     "playtime_forever": 3504,
+  #     "img_icon_url": "87118494c65a92e1ac4c9734ce91950c1d6fe9a5",
+  #     "img_logo_url": "2f22c2e5528b78662988dfcb0fc9aad372f01686"
+  #   }
   def recent_games_for(steam_id)
     uri = "#{BASE_URI}/IPlayerService/GetRecentlyPlayedGames/v0001"
     params = { steamid: steam_id }
