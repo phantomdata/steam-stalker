@@ -7,6 +7,16 @@ module SteamApi
   API_KEY = ENV['STEAM_API_KEY']
   BASE_URI = 'http://api.steampowered.com'.freeze
 
+  # This method queries the Steam API and returns a JSON representation
+  # of the given steam_id's recent game history.
+  def recent_games_for(steam_id)
+    uri = "#{BASE_URI}/IPlayerService/GetRecentlyPlayedGames/v0001"
+    params = { steamid: steam_id }
+    response = steam_get(uri, params)
+
+    response['games']
+  end
+
   # Queries the Steam API and returns the steam_id for the specified
   # nickname.  This leverages Steam's vanity_url functionality.
   def steam_id_for(nickname)
