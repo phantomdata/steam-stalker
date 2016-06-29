@@ -23,25 +23,22 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     }
     @user.reload
 
-    assert_response :redirect
+    assert_response :redirect, 'Setting a vanity name failed'
     assert @user.vanity_name == 'Test', 'Vanity name was not set'
   end
 
   # Test that a vanity name is required.
-  # There is weird error catching to detect, because edit page rendering
-  # does not work in Rails 5 with the current version of Devise+Minitest.
   test 'should require a vanity name' do
-    begin
-      patch '/users', params: {
-        user: {
-          email: @user.email,
-          password: 'password',
-          vanity_name: ""
-        }
+    patch '/users', params: {
+      user: {
+        email: @user.email,
+        password: 'password',
+        vanity_name: ""
       }
-      assert false, "Nil vanity name was accepted"
-    rescue ActionView::Template::Error => ex
-    end
+    }
+
+    assert_response :success
+    assert_includes @response.body, 'Vanity name can'
   end
 
 end

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628062724) do
+ActiveRecord::Schema.define(version: 20160629063916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "steam_profiles", force: :cascade do |t|
+    t.datetime "info_last_refreshed_at"
+    t.string   "steam_id"
+    t.string   "vanity_name"
+    t.index ["vanity_name"], name: "index_steam_profiles_on_vanity_name", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160628062724) do
     t.datetime "updated_at",                          null: false
     t.string   "vanity_name"
     t.string   "steam_id"
+    t.integer  "steam_profile_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
