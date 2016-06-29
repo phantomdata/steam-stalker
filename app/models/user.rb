@@ -14,14 +14,12 @@ class User < ApplicationRecord
 
   private
 
+  # This method, designed to be called on before_save, automatically
+  # associates this user with a SteamProfile (creating one if it does not
+  # already exist).
   def ensure_steam_profile
-    return true if self.steam_profile
-    existing_profile = SteamProfile.for_vanity_name(vanity_name).first
-    if existing_profile
-      self.steam_profile = existing_profile
-      return
-    end
-
-    self.steam_profile = SteamProfile.create(vanity_name: vanity_name)
+    return true if steam_profile
+    self.steam_profile = SteamProfile
+                         .find_or_create_by(vanity_name: vanity_name)
   end
 end

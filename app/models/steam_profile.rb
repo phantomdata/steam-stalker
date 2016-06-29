@@ -3,7 +3,7 @@
 class SteamProfile < ApplicationRecord
   validates :vanity_name, presence: true
 
-  scope :for_vanity_name, ->(vanity_name) {
+  scope :for_vanity_name, lamda { |vanity_name|
     where('vanity_name = ?', vanity_name)
   }
 end
