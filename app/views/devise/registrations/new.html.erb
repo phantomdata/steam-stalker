@@ -21,6 +21,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :vanity_name %>
+    <%= f.text_field :vanity_name %>
+    <small>This is effectively your Steam username.  Its what you type when you go to http://steamcommunity.com/id/VANITY_NAME.</small>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
