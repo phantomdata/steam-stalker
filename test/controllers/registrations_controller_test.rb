@@ -12,7 +12,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     Warden.test_reset!
   end
 
-  test 'cat post to edit' do
+  test 'can set a vanity name' do
     post '/users', params: {
       user: {
         email: @user.email,
@@ -22,5 +22,14 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     @user.reload
     assert_response :redirect
     assert @user.vanity_name = 'Test'
+  end
+
+  test 'must set a vanity name' do
+    post '/users', params: {
+      user: {
+        email: @user.email,
+        vanity_name: nil
+      }
+    }
   end
 end
