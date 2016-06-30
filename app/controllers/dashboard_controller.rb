@@ -3,7 +3,7 @@
 # * The current_user's top games
 # * The current_user's Watched Friends' information as the same
 class DashboardController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   # This method is used to setup and display the data for the user's
   # dashboard

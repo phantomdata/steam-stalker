@@ -2,7 +2,7 @@
 # TODO: Add uniqueness constraint to vanity_name
 class SteamProfile < ApplicationRecord
   has_many :library_entries
-  
+
   validates :steam_id, presence: true
   validates :vanity_name, presence: true
 
@@ -17,7 +17,7 @@ class SteamProfile < ApplicationRecord
   # Setter override to ensure information derived from the SteamAPI is updated
   # whenever the vanity_name is changed.
   def vanity_name=(val)
-    write_attribute(:vanity_name, val)
+    self[:vanity_name] = val
     update_steam_id
     update_library
   end

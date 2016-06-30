@@ -1,3 +1,5 @@
+# Domain model object to act as a decorated join between SteamProfiles and
+# their games
 class LibraryEntry < ApplicationRecord
   belongs_to :game
 
