@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  # Test to validate that when a user is created, it gets a steam_profile
+  # also created and automatically associated.
   test 'should autocreate a new steam profile' do
     VCR.use_cassette('get_steam_id_michael') do
       u = User.create(
