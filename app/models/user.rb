@@ -26,9 +26,7 @@ class User < ApplicationRecord
                          .find_or_create_by(vanity_name: vanity_name)
 
     # At this time, the only thing to make a SteamProfile invalid
-    # is if it can't find the vanity_name. 
-    unless self.steam_profile.valid?
-      self.errors.add(:vanity_name, 'was not found.')
-    end
+    # is if it can't find the vanity_name.
+    errors.add(:vanity_name, 'was not found.') unless steam_profile.valid?
   end
 end

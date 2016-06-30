@@ -8,7 +8,9 @@ class SteamProfile < ApplicationRecord
     where('vanity_name = ?', vanity_name)
   }
 
-  def vanity_name=val
+  # Setter override to ensure steam_id is updated whenever this is changed
+  # or set.
+  def vanity_name=(val)
     write_attribute(:vanity_name, val)
     update_steam_id
   end
