@@ -13,7 +13,7 @@ class SteamServiceTest < ActiveSupport::TestCase
       SteamService.update_library_for(profile.steam_profile)
       
       user.reload
-      assert user.steam_profile.library_entries.count == 590,
+      assert user.steam_profile.library_entries.count == 42,
         "Not enough library entries read."
     end
   end
