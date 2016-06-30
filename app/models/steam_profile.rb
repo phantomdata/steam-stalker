@@ -1,12 +1,18 @@
 # This class represents a given Steam user's basic metadata.
 # TODO: Add uniqueness constraint to vanity_name
 class SteamProfile < ApplicationRecord
+  has_many :library_entries
+  
   validates :steam_id, presence: true
   validates :vanity_name, presence: true
 
   scope :for_vanity_name, lambda { |vanity_name|
     where('vanity_name = ?', vanity_name)
   }
+
+  def update_library
+    all_games = SteamService.all_games_for(steam_id)
+  end
 
   # Setter override to ensure steam_id is updated whenever this is changed
   # or set.

@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630004631) do
+ActiveRecord::Schema.define(version: 20160630051249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "appid"
+    t.string   "icon_url"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games_library_entries", force: :cascade do |t|
+    t.integer "games_id"
+    t.integer "library_entries_id"
+    t.index ["games_id"], name: "index_games_library_entries_on_games_id", using: :btree
+    t.index ["library_entries_id"], name: "index_games_library_entries_on_library_entries_id", using: :btree
+  end
+
+  create_table "library_entries", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "steam_profile_id"
+    t.datetime "info_last_refreshed_at"
+    t.integer  "playtime_in_hours"
+    t.boolean  "recently_played"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["game_id"], name: "index_library_entries_on_game_id", using: :btree
+    t.index ["steam_profile_id"], name: "index_library_entries_on_steam_profile_id", using: :btree
+  end
 
   create_table "steam_profiles", force: :cascade do |t|
     t.datetime "info_last_refreshed_at"
