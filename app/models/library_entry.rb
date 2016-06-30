@@ -5,5 +5,4 @@ class LibraryEntry < ApplicationRecord
 
   validates :playtime_in_hours, presence: true
   validates :playtime_in_hours, numericality: { only_integer: true }
-  validates :recently_played, presence: true
 end
