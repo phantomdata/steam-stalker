@@ -5,13 +5,16 @@ class SteamProfile < ApplicationRecord
 
   before_create :ensure_steam_id
 
-  scope :for_vanity_name, lamda { |vanity_name|
+  scope :for_vanity_name, lambda { |vanity_name|
     where('vanity_name = ?', vanity_name)
   }
 
   private
 
+  # This method, designed to be called on before_create, automatically
+  # fetches the steam_id for this profile if one does not exist.
   def ensure_steam_id
-    steam_id = SteamService.steam_id_for(vanity_name)
+    return true if steam_id
+    self.steam_id = SteamService.steam_id_for(vanity_name)
   end
 end

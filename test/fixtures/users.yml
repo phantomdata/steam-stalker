@@ -6,9 +6,11 @@
 #
 one:
   email: "test1@example.com"
-  vanity_name: "robinwalker"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  steam_profile: robinwalker
+  vanity_name: "robinwalker"
 two:
   email: "test2@example.com"
-  vanity_name: "robinwalker"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  steam_profile: robinwalker
+  vanity_name: "robinwalker"
