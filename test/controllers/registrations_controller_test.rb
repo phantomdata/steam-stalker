@@ -14,17 +14,19 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
 
   # Test that the custom vanity name property can be set
   test 'should set a vanity name' do
-    patch '/users', params: {
-      user: {
-        email: @user.email,
-        current_password: 'password',
-        vanity_name: 'Test'
+    VCR.use_cassette('steam_api_requests') do
+      patch '/users', params: {
+        user: {
+          email: @user.email,
+          current_password: 'password',
+          vanity_name: 'Test'
+        }
       }
-    }
-    @user.reload
+      @user.reload
 
-    assert_response :redirect, 'Setting a vanity name failed'
-    assert @user.vanity_name == 'Test', 'Vanity name was not set'
+      assert_response :redirect, 'Setting a vanity name failed'
+      assert @user.vanity_name == 'Test', 'Vanity name was not set'
+    end
   end
 
   # Test that a vanity name is required.

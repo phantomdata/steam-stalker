@@ -10,7 +10,7 @@ class SteamApiTest < ActiveSupport::TestCase
 
   # The base happy path for getting all games
   test 'can get all games' do
-    VCR.use_cassette('steam_api_get_all_games') do
+    VCR.use_cassette('steam_api_requests') do
       all_games = ::SteamApi::all_games_for(TEST_STEAM_ID)
       assert all_games.count > 0, "No games were returned"
     end
@@ -18,7 +18,7 @@ class SteamApiTest < ActiveSupport::TestCase
 
   # The base happy path for getting a player's recent games
   test 'can get recent games' do
-    VCR.use_cassette('steam_api_get_recent_games') do
+    VCR.use_cassette('steam_api_requests') do
       recent_games = ::SteamApi::recent_games_for(TEST_STEAM_ID)
       assert recent_games.count > 0, "No recent games were displayed."
     end
@@ -26,7 +26,7 @@ class SteamApiTest < ActiveSupport::TestCase
 
   # The base happy path for getting a steam id
   test 'can get valid steam_id' do
-    VCR.use_cassette('steam_api_get_steam_id') do
+    VCR.use_cassette('steam_api_requests') do
       steam_id = ::SteamApi::steam_id_for(TEST_USERNAME)
       assert steam_id == TEST_STEAM_ID,
         "Steam ID was resolved as #{steam_id} instead of #{TEST_STEAM_ID}"

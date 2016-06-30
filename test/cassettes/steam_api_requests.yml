@@ -2,6 +2,148 @@
 http_interactions:
 - request:
     method: get
+    uri: http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001?key=01309DE4EFF47B440C93080F6972E5A5&vanityurl=probably-never-exist-23rtrdgkljrdltkjR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 30 Jun 2016 04:29:03 GMT
+      Date:
+      - Thu, 30 Jun 2016 04:29:03 GMT
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"success\": 42,\n\t\t\"message\": \"No match\"\n\t}\n}"
+    http_version: 
+  recorded_at: Thu, 30 Jun 2016 04:29:03 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001?key=01309DE4EFF47B440C93080F6972E5A5&vanityurl=probably-never-exist-23srtdrtTT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 30 Jun 2016 04:37:03 GMT
+      Date:
+      - Thu, 30 Jun 2016 04:37:03 GMT
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"success\": 42,\n\t\t\"message\": \"No match\"\n\t}\n}"
+    http_version: 
+  recorded_at: Thu, 30 Jun 2016 04:37:03 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001?key=01309DE4EFF47B440C93080F6972E5A5&vanityurl=Test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 30 Jun 2016 04:41:02 GMT
+      Date:
+      - Thu, 30 Jun 2016 04:41:02 GMT
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"steamid\": \"76561197991558078\",\n\t\t\"success\":
+        1\n\t}\n}"
+    http_version: 
+  recorded_at: Thu, 30 Jun 2016 04:41:02 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001?key=01309DE4EFF47B440C93080F6972E5A5&vanityurl=michael
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 30 Jun 2016 04:41:42 GMT
+      Date:
+      - Thu, 30 Jun 2016 04:41:42 GMT
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"steamid\": \"76561197962180080\",\n\t\t\"success\":
+        1\n\t}\n}"
+    http_version: 
+  recorded_at: Thu, 30 Jun 2016 04:41:42 GMT
+- request:
+    method: get
     uri: http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001?key=01309DE4EFF47B440C93080F6972E5A5&steamid=76561197960435530
     body:
       encoding: US-ASCII
@@ -25,9 +167,9 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Expires:
-      - Thu, 30 Jun 2016 00:39:48 GMT
+      - Thu, 30 Jun 2016 04:42:33 GMT
       Date:
-      - Thu, 30 Jun 2016 00:39:48 GMT
+      - Thu, 30 Jun 2016 04:42:33 GMT
       Transfer-Encoding:
       - chunked
       Connection:
@@ -311,67 +453,66 @@ http_interactions:
         326670,\n\t\t\t\t\"playtime_forever\": 24\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
         337040,\n\t\t\t\t\"playtime_forever\": 24\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
         337150,\n\t\t\t\t\"playtime_forever\": 4\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
-        257510,\n\t\t\t\t\"playtime_2weeks\": 119,\n\t\t\t\t\"playtime_forever\":
-        174\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 273350,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 319630,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 340490,\n\t\t\t\t\"playtime_forever\":
-        112\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 340600,\n\t\t\t\t\"playtime_forever\":
-        46\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 341390,\n\t\t\t\t\"playtime_forever\":
-        1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 341800,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 341910,\n\t\t\t\t\"playtime_forever\":
-        161\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 295110,\n\t\t\t\t\"playtime_forever\":
-        209\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 362300,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 433850,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 439700,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 314660,\n\t\t\t\t\"playtime_forever\":
-        21\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 291650,\n\t\t\t\t\"playtime_forever\":
-        1170\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 343450,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 344750,\n\t\t\t\t\"playtime_forever\":
-        2\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 344760,\n\t\t\t\t\"playtime_forever\":
-        14\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 344840,\n\t\t\t\t\"playtime_forever\":
-        7\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 344850,\n\t\t\t\t\"playtime_forever\":
-        117\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 239140,\n\t\t\t\t\"playtime_forever\":
-        912\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 346010,\n\t\t\t\t\"playtime_forever\":
-        49\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 346110,\n\t\t\t\t\"playtime_forever\":
-        217\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 346420,\n\t\t\t\t\"playtime_forever\":
-        27\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 262060,\n\t\t\t\t\"playtime_forever\":
-        11238\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 298630,\n\t\t\t\t\"playtime_forever\":
-        16\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 349890,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 297130,\n\t\t\t\t\"playtime_forever\":
-        18\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 351700,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 351910,\n\t\t\t\t\"playtime_forever\":
-        39\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 329430,\n\t\t\t\t\"playtime_forever\":
-        24\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 311560,\n\t\t\t\t\"playtime_forever\":
-        1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 255710,\n\t\t\t\t\"playtime_forever\":
-        16\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 356040,\n\t\t\t\t\"playtime_forever\":
-        1178\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 271590,\n\t\t\t\t\"playtime_forever\":
-        269\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 357330,\n\t\t\t\t\"playtime_forever\":
-        12\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 358720,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 359320,\n\t\t\t\t\"playtime_forever\":
-        1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 359650,\n\t\t\t\t\"playtime_forever\":
-        8\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 360510,\n\t\t\t\t\"playtime_forever\":
-        22\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 360740,\n\t\t\t\t\"playtime_forever\":
-        6\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 361420,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 361990,\n\t\t\t\t\"playtime_forever\":
-        15\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 362490,\n\t\t\t\t\"playtime_forever\":
-        12\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 267750,\n\t\t\t\t\"playtime_forever\":
-        69\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 363680,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 364800,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 365450,\n\t\t\t\t\"playtime_forever\":
-        34\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 365360,\n\t\t\t\t\"playtime_forever\":
-        5596\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 240460,\n\t\t\t\t\"playtime_forever\":
-        52\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 303340,\n\t\t\t\t\"playtime_forever\":
-        0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 329240,\n\t\t\t\t\"playtime_forever\":
-        9\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 368230,\n\t\t\t\t\"playtime_forever\":
-        96\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 368360,\n\t\t\t\t\"playtime_forever\":
-        15\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 369110,\n\t\t\t\t\"playtime_forever\":
-        51\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 370360,\n\t\t\t\t\"playtime_forever\":
-        70\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 375820,\n\t\t\t\t\"playtime_forever\":
-        1549\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 377160,\n\t\t\t\t\"playtime_forever\":
-        12394\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 378720,\n\t\t\t\t\"playtime_forever\":
-        1792\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 381120,\n\t\t\t\t\"playtime_forever\":
-        19\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\": 327140,\n\t\t\t\t\"playtime_2weeks\":
-        9,\n\t\t\t\t\"playtime_forever\": 81\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        257510,\n\t\t\t\t\"playtime_2weeks\": 40,\n\t\t\t\t\"playtime_forever\": 174\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        273350,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        319630,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        340490,\n\t\t\t\t\"playtime_forever\": 112\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        340600,\n\t\t\t\t\"playtime_forever\": 46\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        341390,\n\t\t\t\t\"playtime_forever\": 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        341800,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        341910,\n\t\t\t\t\"playtime_forever\": 161\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        295110,\n\t\t\t\t\"playtime_forever\": 209\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        362300,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        433850,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        439700,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        314660,\n\t\t\t\t\"playtime_forever\": 21\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        291650,\n\t\t\t\t\"playtime_forever\": 1170\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        343450,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        344750,\n\t\t\t\t\"playtime_forever\": 2\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        344760,\n\t\t\t\t\"playtime_forever\": 14\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        344840,\n\t\t\t\t\"playtime_forever\": 7\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        344850,\n\t\t\t\t\"playtime_forever\": 117\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        239140,\n\t\t\t\t\"playtime_forever\": 912\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        346010,\n\t\t\t\t\"playtime_forever\": 49\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        346110,\n\t\t\t\t\"playtime_forever\": 217\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        346420,\n\t\t\t\t\"playtime_forever\": 27\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        262060,\n\t\t\t\t\"playtime_forever\": 11238\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        298630,\n\t\t\t\t\"playtime_forever\": 16\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        349890,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        297130,\n\t\t\t\t\"playtime_forever\": 18\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        351700,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        351910,\n\t\t\t\t\"playtime_forever\": 39\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        329430,\n\t\t\t\t\"playtime_forever\": 24\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        311560,\n\t\t\t\t\"playtime_forever\": 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        255710,\n\t\t\t\t\"playtime_forever\": 16\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        356040,\n\t\t\t\t\"playtime_forever\": 1178\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        271590,\n\t\t\t\t\"playtime_forever\": 269\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        357330,\n\t\t\t\t\"playtime_forever\": 12\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        358720,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        359320,\n\t\t\t\t\"playtime_forever\": 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        359650,\n\t\t\t\t\"playtime_forever\": 8\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        360510,\n\t\t\t\t\"playtime_forever\": 22\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        360740,\n\t\t\t\t\"playtime_forever\": 6\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        361420,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        361990,\n\t\t\t\t\"playtime_forever\": 15\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        362490,\n\t\t\t\t\"playtime_forever\": 12\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        267750,\n\t\t\t\t\"playtime_forever\": 69\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        363680,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        364800,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        365450,\n\t\t\t\t\"playtime_forever\": 34\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        365360,\n\t\t\t\t\"playtime_forever\": 5596\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        240460,\n\t\t\t\t\"playtime_forever\": 52\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        303340,\n\t\t\t\t\"playtime_forever\": 0\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        329240,\n\t\t\t\t\"playtime_forever\": 9\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        368230,\n\t\t\t\t\"playtime_forever\": 96\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        368360,\n\t\t\t\t\"playtime_forever\": 15\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        369110,\n\t\t\t\t\"playtime_forever\": 51\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        370360,\n\t\t\t\t\"playtime_forever\": 70\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        375820,\n\t\t\t\t\"playtime_forever\": 1549\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        377160,\n\t\t\t\t\"playtime_forever\": 12394\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        378720,\n\t\t\t\t\"playtime_forever\": 1792\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        381120,\n\t\t\t\t\"playtime_forever\": 19\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        327140,\n\t\t\t\t\"playtime_2weeks\": 9,\n\t\t\t\t\"playtime_forever\": 81\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
         380670,\n\t\t\t\t\"playtime_forever\": 10\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
         386690,\n\t\t\t\t\"playtime_forever\": 40\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
         392680,\n\t\t\t\t\"playtime_forever\": 40\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
@@ -629,5 +770,121 @@ http_interactions:
         281990,\n\t\t\t\t\"playtime_forever\": 1728\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
         379720,\n\t\t\t\t\"playtime_forever\": 416\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
     http_version: 
-  recorded_at: Thu, 30 Jun 2016 00:39:49 GMT
+  recorded_at: Thu, 30 Jun 2016 04:42:33 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001?key=01309DE4EFF47B440C93080F6972E5A5&steamid=76561197960435530
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Eresult:
+      - '1'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 30 Jun 2016 04:42:55 GMT
+      Date:
+      - Thu, 30 Jun 2016 04:42:55 GMT
+      Content-Length:
+      - '3572'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"total_count\": 15,\n\t\t\"games\": [\n\t\t\t{\n\t\t\t\t\"appid\":
+        252110,\n\t\t\t\t\"name\": \"Lovers in a Dangerous Spacetime\",\n\t\t\t\t\"playtime_2weeks\":
+        1270,\n\t\t\t\t\"playtime_forever\": 1270,\n\t\t\t\t\"img_icon_url\": \"1661236ad6879957c73f0090efee34cdba2be649\",\n\t\t\t\t\"img_logo_url\":
+        \"ae4b103bc8edbcc9230cd10106295343e10a9951\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        254320,\n\t\t\t\t\"name\": \"Duskers\",\n\t\t\t\t\"playtime_2weeks\": 114,\n\t\t\t\t\"playtime_forever\":
+        820,\n\t\t\t\t\"img_icon_url\": \"5a580530011ede61155f364f840cb230bb8eae33\",\n\t\t\t\t\"img_logo_url\":
+        \"73fbc14694dab5413245e5d0d7c8616d7a735169\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        450390,\n\t\t\t\t\"name\": \"The Lab\",\n\t\t\t\t\"playtime_2weeks\": 46,\n\t\t\t\t\"playtime_forever\":
+        99,\n\t\t\t\t\"img_icon_url\": \"69ca11312e3a1779946de8871d6bdb003636ffbf\",\n\t\t\t\t\"img_logo_url\":
+        \"dde7f70d5d590ba242ca8fcfaac9fe9b5e5e8754\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        257510,\n\t\t\t\t\"name\": \"The Talos Principle\",\n\t\t\t\t\"playtime_2weeks\":
+        40,\n\t\t\t\t\"playtime_forever\": 174,\n\t\t\t\t\"img_icon_url\": \"8222673c1eb13e6a8a8367ec0e2940a887ecf270\",\n\t\t\t\t\"img_logo_url\":
+        \"0392d2bd5d1bec31f2fd283bc4555fdc22dd44a9\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        440,\n\t\t\t\t\"name\": \"Team Fortress 2\",\n\t\t\t\t\"playtime_2weeks\":
+        37,\n\t\t\t\t\"playtime_forever\": 16158,\n\t\t\t\t\"img_icon_url\": \"e3f595a92552da3d664ad00277fad2107345f743\",\n\t\t\t\t\"img_logo_url\":
+        \"07385eb55b5ba974aebbe74d3c99626bda7920b8\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        397460,\n\t\t\t\t\"name\": \"The Jackbox Party Pack 2\",\n\t\t\t\t\"playtime_2weeks\":
+        30,\n\t\t\t\t\"playtime_forever\": 30,\n\t\t\t\t\"img_icon_url\": \"f21269463ee8801e9df342cd975a556ccef3e602\",\n\t\t\t\t\"img_logo_url\":
+        \"f341add3e064a99ddd1916ecbe8b142766ebd483\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        448280,\n\t\t\t\t\"name\": \"Job Simulator\",\n\t\t\t\t\"playtime_2weeks\":
+        27,\n\t\t\t\t\"playtime_forever\": 62,\n\t\t\t\t\"img_icon_url\": \"a79043a902d0d185154331f2e8b236f6e19b5e74\",\n\t\t\t\t\"img_logo_url\":
+        \"c69a51f62a482091ca5c40d0131fd752cb00224f\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        400940,\n\t\t\t\t\"name\": \"Budget Cuts\",\n\t\t\t\t\"playtime_2weeks\":
+        18,\n\t\t\t\t\"playtime_forever\": 69,\n\t\t\t\t\"img_icon_url\": \"2605408c255afcce72efe49c09a413e7325c6cba\",\n\t\t\t\t\"img_logo_url\":
+        \"07baa0bc3d57e0402b07f622a23342358f295796\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        469960,\n\t\t\t\t\"playtime_2weeks\": 9,\n\t\t\t\t\"playtime_forever\": 9\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        327140,\n\t\t\t\t\"name\": \"Tilt Brush\",\n\t\t\t\t\"playtime_2weeks\": 9,\n\t\t\t\t\"playtime_forever\":
+        81,\n\t\t\t\t\"img_icon_url\": \"b90d33b5e8c02536ed1586db8b1433cc11c33fc6\",\n\t\t\t\t\"img_logo_url\":
+        \"1cfc76d8334e75d7b23a6c53aaa4c95b3068df01\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        451520,\n\t\t\t\t\"name\": \"theBlu\",\n\t\t\t\t\"playtime_2weeks\": 8,\n\t\t\t\t\"playtime_forever\":
+        11,\n\t\t\t\t\"img_icon_url\": \"12405ff8889405ba6fba24b2004073187a164c39\",\n\t\t\t\t\"img_logo_url\":
+        \"7dcc941515141de366b9d57a4e1cb6125e0cd14d\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        453170,\n\t\t\t\t\"name\": \"Destinations\",\n\t\t\t\t\"playtime_2weeks\":
+        6,\n\t\t\t\t\"playtime_forever\": 6,\n\t\t\t\t\"img_icon_url\": \"fa89a6c1a8baa72198ca1d17a6d12f1067136162\",\n\t\t\t\t\"img_logo_url\":
+        \"da0685ad7bc52717d45117b025c824abfd82c50a\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        418650,\n\t\t\t\t\"name\": \"Space Pirate Trainer\",\n\t\t\t\t\"playtime_2weeks\":
+        4,\n\t\t\t\t\"playtime_forever\": 15,\n\t\t\t\t\"img_icon_url\": \"77771ac82d2ca2d4e2e958cacfa7f8092eb216c2\",\n\t\t\t\t\"img_logo_url\":
+        \"303c70c2ba6842a0603a9df28443fb570edade0c\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        440630,\n\t\t\t\t\"name\": \"The Brookhaven Experiment\",\n\t\t\t\t\"playtime_2weeks\":
+        2,\n\t\t\t\t\"playtime_forever\": 2,\n\t\t\t\t\"img_icon_url\": \"3121301df84be89fb199b6ffc0f71c3a66c44186\",\n\t\t\t\t\"img_logo_url\":
+        \"1d95ed9ebba3fbbd1373f267b9fd56599602b780\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"appid\":
+        400760,\n\t\t\t\t\"name\": \"ZenBlade\",\n\t\t\t\t\"playtime_2weeks\": 1,\n\t\t\t\t\"playtime_forever\":
+        22,\n\t\t\t\t\"img_icon_url\": \"f9295b5684336e4822068bea77b78322e31be289\",\n\t\t\t\t\"img_logo_url\":
+        \"8f9c81ff17a5309534447918107957d6ed16105b\"\n\t\t\t}\n\t\t]\n\t\t\n\t}\n}"
+    http_version: 
+  recorded_at: Thu, 30 Jun 2016 04:42:55 GMT
+- request:
+    method: get
+    uri: http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001?key=01309DE4EFF47B440C93080F6972E5A5&vanityurl=robinwalker
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 30 Jun 2016 04:43:15 GMT
+      Date:
+      - Thu, 30 Jun 2016 04:43:15 GMT
+      Content-Length:
+      - '70'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"response\": {\n\t\t\"steamid\": \"76561197960435530\",\n\t\t\"success\":
+        1\n\t}\n}"
+    http_version: 
+  recorded_at: Thu, 30 Jun 2016 04:43:15 GMT
 recorded_with: VCR 3.0.3
