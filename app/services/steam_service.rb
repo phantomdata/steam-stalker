@@ -2,6 +2,6 @@
 # application.
 class SteamService
   def self.steam_id_for vanity_name
-
+    ::SteamApi.steam_id_for vanity_name
   end
 end
