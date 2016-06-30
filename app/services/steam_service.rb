@@ -5,12 +5,13 @@ class SteamService
     # Leverages the SteamApi to fetch and update the passed SteamProfile's
     # library.  Will update a user's games and their playtimes
     def update_library_for(steam_profile)
+      return if steam_profile.steam_id.nil?
       all_games_json = ::SteamApi.all_games_for(steam_profile.steam_id)
       recent_games_json = ::SteamApi.recent_games_for(steam_profile.steam_id)
 
       all_games_json.each do |game_json|
         game = Game.find_or_create_by(appid: game_json['appid'])
-        recent_game = recent_games_json.detect { |g| g['appid'] == game.appid }
+        recent_game = recent_games_json&.detect { |g| g['appid'] == game.appid }
         playtime = game_json['playtime_forever']
 
         update_game_from_recent_game_json!(game, recent_game)

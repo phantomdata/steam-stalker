@@ -17,7 +17,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'should handle if the child SteamProfile couldnt be created' do
-    VCR.use_cassette('steam_api_requests') do
+    VCR.use_cassette('steam_api_requests', record: :new_episodes) do
       u = User.create(
         email: 'null@example.com',
         password: 'password',

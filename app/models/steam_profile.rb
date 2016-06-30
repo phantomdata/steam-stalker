@@ -11,14 +11,15 @@ class SteamProfile < ApplicationRecord
   }
 
   def update_library
-    all_games = SteamService.all_games_for(steam_id)
+    SteamService.update_library_for(self)
   end
 
-  # Setter override to ensure steam_id is updated whenever this is changed
-  # or set.
+  # Setter override to ensure information derived from the SteamAPI is updated
+  # whenever the vanity_name is changed.
   def vanity_name=(val)
     write_attribute(:vanity_name, val)
     update_steam_id
+    update_library
   end
 
   private
