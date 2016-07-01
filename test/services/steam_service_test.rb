@@ -13,8 +13,12 @@ class SteamServiceTest < ActiveSupport::TestCase
       SteamService.update_library_for(profile.steam_profile)
       
       user.reload
-      assert user.steam_profile.library_entries.count == 42,
+      game = user.steam_profile.library_entries.last.game
+
+      assert user.steam_profile.library_entries.count == 592,
         "Not enough library entries read."
+      assert game.name == 'DOOM'
+      assert game.icon_url == 'b6e72ff47d1990cb644700751eeeff14e0aba6dc'
     end
   end
 

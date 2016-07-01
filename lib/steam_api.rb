@@ -16,7 +16,7 @@ module SteamApi
     #   { "appid": 2200, "playtime_forever": 42 }
     def all_games_for(steam_id)
       uri = "#{BASE_URI}/IPlayerService/GetOwnedGames/v0001"
-      params = { steamid: steam_id }
+      params = { steamid: steam_id, include_appinfo: 1 }
       response = steam_get(uri, params)
 
       response['games']
@@ -24,6 +24,11 @@ module SteamApi
 
     # This method queries the Steam API and returns a JSON representation
     # of the given steam_id's recent game history.
+    #
+    # NOTE: This method returns AppInfo for all games, despite the fact that
+    # we may not need it.  Unfortunately, Steam currently offers no way
+    # to retrieve the icon url; so we have to pull this down here instead
+    # of letting it be loaded on a need-to-load basis.
     #
     # Return format:
     #   {

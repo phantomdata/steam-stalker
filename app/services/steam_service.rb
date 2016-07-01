@@ -10,7 +10,7 @@ class SteamService
       recent_games_json = ::SteamApi.recent_games_for(steam_profile.steam_id)
 
       all_games_json.each do |game_json|
-        game = Game.find_or_create_by(appid: game_json['appid'])
+        game = find_or_create_game_from_json!(game_json)
         recent_game = recent_games_json&.detect { |g| g['appid'] == game.appid }
         playtime = game_json['playtime_forever']
 
@@ -37,6 +37,15 @@ class SteamService
       library_entry.save!
     end
 
+    def find_or_create_game_from_json!(game_json)
+      game = Game.find_or_create_by(appid: game_json['appid'])
+      game.update_attributes(
+        name: game_json['name'],
+        icon_url: game_json['img_icon_url']
+      )
+      game
+    end
+
     # If needed, this method updates the passed in Game object with the data
     # found in the passed recent_games_json and persists those changes to the
     # database.
@@ -44,7 +53,7 @@ class SteamService
       return if recent_game_json.nil?
       game.update_attributes(
         name: recent_game_json['name'],
-        icon_url: recent_game_json['icon_url']
+        icon_url: recent_game_json['img_icon_url']
       )
     end
   end
