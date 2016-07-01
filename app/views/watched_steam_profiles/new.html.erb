@@ -1,0 +1,11 @@
+<h1>Add a Profile to Watch</h1>
+<% if @watched_steam_profile.errors.any? %>
+  <div class="notification error">
+    <% @watched_steam_profile.errors.full_messages.each do |msg| %><p><%= msg %></p><% end %>
+  </div>
+<% end %>
+<%= form_for @watched_steam_profile do |f| %>
+  <%= f.label :vanity_name, class: '' %>
+  <%= f.text_field :vanity_name, class: '' %>
+  <input type="submit" value="Submit" class="button" />
+<% end %>

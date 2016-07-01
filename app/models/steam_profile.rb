@@ -1,8 +1,10 @@
 # This class represents a given Steam user's basic metadata.
 # TODO: Add uniqueness constraint to vanity_name
 class SteamProfile < ApplicationRecord
+  after_save :update_library
+
   has_many :games, through: :library_entries
-  has_many :library_entries
+  has_many :library_entries, dependent: :destroy
 
   validates :steam_id, presence: true
   validates :vanity_name, presence: true
@@ -23,6 +25,7 @@ class SteamProfile < ApplicationRecord
     library_entries.recent.map(&:game)
   end
 
+  # Updates this SteamProfiles library
   def update_library
     SteamService.update_library_for(self)
   end
@@ -32,7 +35,6 @@ class SteamProfile < ApplicationRecord
   def vanity_name=(val)
     self[:vanity_name] = val
     update_steam_id
-    update_library
   end
 
   private

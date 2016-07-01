@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630051249) do
+ActiveRecord::Schema.define(version: 20160701044507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(version: 20160630051249) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "games_library_entries", force: :cascade do |t|
-    t.integer "games_id"
-    t.integer "library_entries_id"
-    t.index ["games_id"], name: "index_games_library_entries_on_games_id", using: :btree
-    t.index ["library_entries_id"], name: "index_games_library_entries_on_library_entries_id", using: :btree
   end
 
   create_table "library_entries", force: :cascade do |t|
@@ -66,6 +59,16 @@ ActiveRecord::Schema.define(version: 20160630051249) do
     t.integer  "steam_profile_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "watched_steam_profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "steam_profile_id"
+    t.string   "vanity_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["steam_profile_id"], name: "index_watched_steam_profiles_on_steam_profile_id", using: :btree
+    t.index ["user_id"], name: "index_watched_steam_profiles_on_user_id", using: :btree
   end
 
 end

@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   # Remember, belongs_to is required:true by default
   belongs_to :steam_profile
+  has_many :watched_steam_profiles
 
   validates :vanity_name, presence: true
   validates :vanity_name, length: { maximum: 254 }

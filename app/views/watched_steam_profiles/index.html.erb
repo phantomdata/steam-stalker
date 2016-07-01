@@ -1,0 +1,13 @@
+<h1>Watched Steam Profiles</h1>
+<%= link_to 'New', new_watched_steam_profile_path %>
+<ul>
+  <% @watched_steam_profiles.each do |watched_steam_profile| %>
+    <li>
+    <%= watched_steam_profile.vanity_name %>
+    - <%= link_to 'Unwatch', watched_steam_profile_path(watched_steam_profile),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }
+      %>
+    </li>
+  <% end %>
+</ul>
