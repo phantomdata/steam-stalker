@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   before_validation :ensure_steam_profile
 
+  delegate :recent_games, to: :steam_profile
+
   private
 
   # This method, designed to be called on before_save, automatically

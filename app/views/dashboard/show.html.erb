@@ -4,6 +4,10 @@
 
 <h3>Latest Games</h3>
 
+<% @recent_games.each do |game| %>
+  <%= game.name %>
+<% end %>
+
 <!-- Display Top 4 Latest Played Games -->
 
 <h3>Favorite Games</h3>
