@@ -1,4 +1,4 @@
-# phantom-games
+# Steam Stalker
 
 ## Introduction
 
