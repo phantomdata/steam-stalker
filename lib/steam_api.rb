@@ -11,6 +11,10 @@ module SteamApi
     API_KEY = ENV['STEAM_API_KEY']
     BASE_URI = 'http://api.steampowered.com'.freeze
 
+    ALL_GAMES_API_URL="#{BASE_URI}/IPlayerService/GetOwnedGames/v0001".freeze
+    RECENT_GAMES_API_URL="#{BASE_URI}/IPlayerService/GetRecentlyPlayedGames/v0001".freeze
+    STEAM_ID_API_URL="#{BASE_URI}/ISteamUser/ResolveVanityURL/v0001".freeze
+
     # This method queries the Steam API and returns a JSON representation of
     # the given steam_id's entire game library.  Full game info is intentionally
     # not included in the response, as this method is destined to be used
@@ -19,9 +23,8 @@ module SteamApi
     # Return format:
     #   { "appid": 2200, "playtime_forever": 42 }
     def all_games_for(steam_id)
-      uri = "#{BASE_URI}/IPlayerService/GetOwnedGames/v0001"
       params = { steamid: steam_id, include_appinfo: 1 }
-      response = steam_get(uri, params)
+      response = steam_get(ALL_GAMES_API_URL, params)
 
       response['games']
     end
@@ -44,9 +47,8 @@ module SteamApi
     #     "img_logo_url": "2f22c2e5528b78662988dfcb0fc9aad372f01686"
     #   }
     def recent_games_for(steam_id)
-      uri = "#{BASE_URI}/IPlayerService/GetRecentlyPlayedGames/v0001"
       params = { steamid: steam_id }
-      response = steam_get(uri, params)
+      response = steam_get(RECENT_GAMES_API_URL, params)
 
       response['games']
     end
@@ -54,12 +56,8 @@ module SteamApi
     # Queries the Steam API and returns the steam_id for the specified
     # nickname.  This leverages Steam's vanity_url functionality.
     def steam_id_for(nickname)
-      uri = "#{BASE_URI}/ISteamUser/ResolveVanityURL/v0001"
-      params = {
-        vanityurl: nickname
-      }
-
-      response = steam_get(uri, params)
+      params = { vanityurl: nickname }
+      response = steam_get(STEAM_ID_API_URL, params)
       response['steamid']
     end
 
