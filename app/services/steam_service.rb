@@ -31,7 +31,7 @@ class SteamService
     # entry.  Ensuring that it is updated if it exists, or created if not.
     def upsert_library_entry(game, playtime, recent_game, steam_profile)
       library_entry = LibraryEntry.find_or_initialize_by(game_id: game.id)
-      library_entry.playtime_in_hours = playtime
+      library_entry.playtime_in_hours = playtime / 60
       library_entry.recently_played = !recent_game.nil?
       library_entry.steam_profile_id = steam_profile.id
       library_entry.save!
@@ -49,6 +49,9 @@ class SteamService
     # If needed, this method updates the passed in Game object with the data
     # found in the passed recent_games_json and persists those changes to the
     # database.
+    #
+    # NOTE: Why icon and not logo?  Logos are inconsistently available
+    # in the API.
     def update_game_from_recent_game_json!(game, recent_game_json)
       return if recent_game_json.nil?
       game.update_attributes(

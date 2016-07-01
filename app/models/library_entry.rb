@@ -8,4 +8,7 @@ class LibraryEntry < ApplicationRecord
 
   validates :playtime_in_hours, presence: true
   validates :playtime_in_hours, numericality: { only_integer: true }
+
+  delegate :name, to: :game
+  delegate :icon_url, to: :game
 end
