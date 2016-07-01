@@ -5,7 +5,8 @@ class WatchedSteamProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @watched_steam_profile = WatchedSteamProfile.new watched_steam_profile_params
+    @watched_steam_profile =
+      WatchedSteamProfile.new(watched_steam_profile_params)
     @watched_steam_profile.user = current_user
 
     if @watched_steam_profile.save
@@ -18,7 +19,7 @@ class WatchedSteamProfilesController < ApplicationController
 
   def destroy
     @watched_steam_profile = current_user.watched_steam_profiles
-      .find(params[:id])
+                                         .find(params[:id])
 
     if @watched_steam_profile.destroy
       flash[:success] = 'No more stalking.  :('
@@ -42,5 +43,4 @@ class WatchedSteamProfilesController < ApplicationController
   def watched_steam_profile_params
     params.require(:watched_steam_profile).permit(:vanity_name)
   end
-
 end
