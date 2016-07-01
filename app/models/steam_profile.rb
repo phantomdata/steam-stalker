@@ -1,5 +1,4 @@
 # This class represents a given Steam user's basic metadata.
-# TODO: Add uniqueness constraint to vanity_name
 class SteamProfile < ApplicationRecord
   after_save :update_library
 
@@ -8,6 +7,7 @@ class SteamProfile < ApplicationRecord
 
   validates :steam_id, presence: true
   validates :vanity_name, presence: true
+  validates :vanity_name, uniqueness: true
 
   scope :for_vanity_name, lambda { |vanity_name|
     where('vanity_name = ?', vanity_name)
