@@ -8,6 +8,10 @@ class WatchedSteamProfile < ApplicationRecord
 
   before_validation :ensure_steam_profile
 
+  delegate :favorite_games, to: :steam_profile
+  delegate :library_entries, to: :steam_profile
+  delegate :recent_games, to: :steam_profile
+
   private
 
   # Designed to be called before_validation, this method ensures that the

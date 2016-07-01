@@ -6,17 +6,13 @@
 <h3>Latest Games</h3>
 
 <% @recent_library_entries.each do |library_entry| %>
-  <%= library_entry.name %>
-  <%= image_tag(game_icon_url(library_entry.game)) %>
-  <%= library_entry.playtime_in_hours %> hours
+  <%= render 'library_entries/blurb', { library_entry: library_entry } %>
 <% end %>
 
 <h3>Favorite Games</h3>
 
 <% @favorite_library_entries.each do |library_entry| %>
-  <%= library_entry.name %>
-  <%= image_tag(game_icon_url(library_entry.game)) %>
-  <%= library_entry.playtime_in_hours %> hours
+  <%= render 'library_entries/blurb', { library_entry: library_entry } %>
 <% end %>
 
 <!-- Display Top 10 Longest Played Games -->
@@ -27,16 +23,12 @@
   <h3><%= watched_steam_profile.vanity_name %></h3>
 
   <h4>Recent Games</h4>
-  <% watched_steam_profile.steam_profile.library_entries.recent.each do |le| %>
-    <%= le.name %>
-    <%= image_tag(game_icon_url(le.game)) %>
-    <%= le.playtime_in_hours %> hours
+  <% watched_steam_profile.library_entries.recent.each do |library_entry| %>
+    <%= render 'library_entries/blurb', { library_entry: library_entry } %>
   <% end %>
 
   <h4>Favorite Games</h4>
-  <% watched_steam_profile.steam_profile.library_entries.favorites.each do |le| %>
-    <%= le.name %>
-    <%= image_tag(game_icon_url(le.game)) %>
-    <%= le.playtime_in_hours %> hours
+  <% watched_steam_profile.library_entries.favorites.each do |library_entry| %>
+    <%= render 'library_entries/blurb', { library_entry: library_entry } %>
   <% end %>
 <% end %>
