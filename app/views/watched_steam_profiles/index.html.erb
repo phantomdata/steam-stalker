@@ -11,3 +11,7 @@
     </li>
   <% end %>
 </ul>
+
+<% if @watched_steam_profiles.count == 0 %>
+  <p>Feeling a bit lonely?  Why don't you <%= link_to 'stalk some folks', new_watched_steam_profile_path %>?</p>
+<% end %>
