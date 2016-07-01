@@ -1,6 +1,10 @@
 # This module is responsible for retrieving information from the
 # Steam API.  Before using this module, be sure to set a STEAM_API_KEY
 # environment variables.
+#
+# NOTE: I recognize that this could be factored into a gem.  This project's
+# purpose, however, is not to spawn something to be later maintained - but
+# instead a useful project straight away.
 module SteamApi
   class SteamApiError < StandardError; end
   class << self
