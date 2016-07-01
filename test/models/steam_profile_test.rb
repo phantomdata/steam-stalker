@@ -14,12 +14,24 @@ class SteamProfileTest < ActiveSupport::TestCase
     end
   end
 
+  # Test to ensure that the steam_profile can list out its favorite
+  # played games
+  test 'should be able to get favorite games' do
+    VCR.use_cassette('steam_api_requests') do
+      u = users(:one)
+      p = u.steam_profile
+      p.update_library
+      assert p.favorite_games.count == 5, 'Incorrect favorite games returned'
+    end
+  end
+
+
   # Test to ensure that the steam_profile can list out its recently
   # played games
   test 'should be able to get recent games' do
     VCR.use_cassette('steam_api_requests') do
       u = users(:one)
-      p = u.steam_profile # TODO: Figure out why i need to do this in test
+      p = u.steam_profile
       p.update_library
       assert p.recent_games.count == 1, 'No recent games returned'
     end

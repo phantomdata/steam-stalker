@@ -11,6 +11,12 @@ class SteamProfile < ApplicationRecord
     where('vanity_name = ?', vanity_name)
   }
 
+  # Not quite a scope; this is used to map out the favrite games of a particular
+  # profile.
+  def favorite_games
+    library_entries.favorites.map(&:game)
+  end
+
   # Not quite a scope; this is used to map out the games recently played
   # by this steam_profile based on its relationships
   def recent_games

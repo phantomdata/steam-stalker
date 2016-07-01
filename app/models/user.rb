@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   before_validation :ensure_steam_profile
 
+  delegate :favorite_games, to: :steam_profile
   delegate :recent_games, to: :steam_profile
 
   private

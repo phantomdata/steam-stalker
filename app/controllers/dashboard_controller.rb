@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
   # dashboard
   def show
     @steam_profile = current_user.steam_profile
+    @favorite_games = current_user.favorite_games
     @recent_games = current_user.recent_games
   end
 end

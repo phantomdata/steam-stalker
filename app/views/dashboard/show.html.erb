@@ -8,9 +8,11 @@
   <%= game.name %>
 <% end %>
 
-<!-- Display Top 4 Latest Played Games -->
-
 <h3>Favorite Games</h3>
+
+<% @favorite_games.each do |game| %>
+  <%= game.appid %>
+<% end %>
 
 <!-- Display Top 10 Longest Played Games -->
 
