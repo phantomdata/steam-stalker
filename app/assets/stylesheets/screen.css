@@ -1,0 +1,48 @@
+/** Global Stylings **/
+body {
+  background-color: #1c2433;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: white;
+}
+
+/** Page Stylings **/
+.content-wrapper {
+  background-color: #32344a;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+  color: #d8d8d8;
+  margin: 65px auto;
+  max-width: 720px;
+  padding: 50px;
+}
+.header-navigation {
+  background-color: black;
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+  overflow: hidden;
+}
+  .header-navigation a {
+    color: #cbd0e2;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  .header-navigation li {
+    float: left;
+    margin-left: 25px;
+  }
+
+
+/** Form Stylings **/
+form { }
+  form input[type="text"], form input[type="email"], form input[type="password"] {
+    padding: 10px;
+    width: 200px;
+  }
+  form .field {
+    margin-bottom: 25px;
+  }

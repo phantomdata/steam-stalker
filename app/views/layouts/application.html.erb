@@ -9,12 +9,16 @@
   </head>
 
   <body>
-    <ul>
-      <li><%= link_to 'Dashboard', dashboard_path %></li>
-      <li><%= link_to 'Watched', watched_steam_profiles_path %></li>
-      <li><%= link_to 'Profile', edit_user_registration_path %></li>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-    </ul>
-    <%= yield %>
+      <ul class="header-navigation">
+      <% if current_user %>
+          <li><%= link_to 'Dashboard', dashboard_path %></li>
+          <li><%= link_to 'Watched', watched_steam_profiles_path %></li>
+          <li><%= link_to 'Profile', edit_user_registration_path %></li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+        <% end %>
+      </ul>
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>
