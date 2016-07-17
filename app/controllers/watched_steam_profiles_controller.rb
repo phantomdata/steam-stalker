@@ -23,15 +23,11 @@ class WatchedSteamProfilesController < ApplicationController
 
     if @watched_steam_profile.destroy
       flash[:success] = 'No more stalking.  :('
-      return redirect_to watched_steam_profiles_path
+      return redirect_to dashboard_path
     end
 
     flash[:error] = 'We just couldn\'t stop watching.'
     redirect_to dashboard_path
-  end
-
-  def index
-    @watched_steam_profiles = current_user.watched_steam_profiles
   end
 
   def new

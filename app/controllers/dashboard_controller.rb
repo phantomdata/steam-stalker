@@ -13,5 +13,6 @@ class DashboardController < ApplicationController
     @recent_library_entries = current_user.library_entries.recent
 
     @watched_steam_profiles = current_user.watched_steam_profiles
+                                          .order('vanity_name ASC')
   end
 end
