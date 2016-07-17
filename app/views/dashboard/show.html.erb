@@ -19,10 +19,22 @@
   </div>
 </div>
 
-<h2>What Your Friends are Up To</h2>
+<h2>
+  What Your Friends are Up To
+  <%= link_to 'stalk someone',
+              new_watched_steam_profile_path,
+              class: 'action-link' %>
+</h2>
 
 <% @watched_steam_profiles.each do |watched_steam_profile| %>
-  <h3><%= watched_steam_profile.vanity_name %></h3>
+  <h3>
+    <%= watched_steam_profile.vanity_name %>
+    <%= link_to 'unwatch', watched_steam_profile_path(watched_steam_profile),
+                  class: 'action-link',
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }
+      %>
+  </h3>
   <div class="grid-row stand-out">
     <div class="grid-column">
       <h4>Recent Games</h4>

@@ -11,7 +11,7 @@ class WatchedSteamProfilesController < ApplicationController
 
     if @watched_steam_profile.save
       flash[:success] = 'May the stalking continue.'
-      return redirect_to watched_steam_profiles_path
+      return redirect_to dashboard_path
     end
 
     render :new
@@ -27,7 +27,7 @@ class WatchedSteamProfilesController < ApplicationController
     end
 
     flash[:error] = 'We just couldn\'t stop watching.'
-    redirect_to watched_steam_profiles_path
+    redirect_to dashboard_path
   end
 
   def index

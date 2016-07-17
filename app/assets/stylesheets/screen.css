@@ -20,6 +20,22 @@ h2 {
   font-weight: 700;
 }
 
+h2 .action-link {
+  float: right;
+  font-size: 0.85em;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
+h3 .action-link {
+  float: right;
+  font-size: 0.85em;
+  font-weight: normal;
+  text-decoration: none;
+}
+
 hr {
   border: 0;
   border-bottom: 1px solid #797e9e;
@@ -83,7 +99,7 @@ p {
   color: #d8d8d8;
   margin: 65px auto;
   max-width: 720px;
-  padding: 10px 50px 10px 50px;
+  padding: 10px 50px 50px 50px;
 }
 .header-navigation {
   background-color: #1b1c29;
