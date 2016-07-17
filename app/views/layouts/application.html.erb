@@ -4,13 +4,15 @@
     <title>Steam Stalker</title>
     <%= csrf_meta_tags %>
 
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron:900' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <ul class="header-navigation">
+    <ul class="header-navigation">
+      <li class="logo">Steam Stalker</li>
       <% if current_user %>
           <li><%= link_to 'Dashboard', dashboard_path %></li>
           <li><%= link_to 'Watched', watched_steam_profiles_path %></li>

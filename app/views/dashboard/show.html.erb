@@ -2,34 +2,41 @@
 
 <h2>What You've Been Up To</h2>
 
-<h3>Latest Games</h3>
+<div class="grid-row stand-out">
+  <div class="grid-column">
+    <h3>Latest Games</h3>
 
-<% @recent_library_entries.each do |library_entry| %>
-  <%= render 'library_entries/blurb', { library_entry: library_entry } %>
-<% end %>
+    <% @recent_library_entries.each do |library_entry| %>
+      <%= render 'library_entries/blurb', { library_entry: library_entry } %>
+    <% end %>
+  </div>
+  <div class="grid-column">
+    <h3>Favorite Games</h3>
 
-<h3>Favorite Games</h3>
-
-<% @favorite_library_entries.each do |library_entry| %>
-  <%= render 'library_entries/blurb', { library_entry: library_entry } %>
-<% end %>
-
-<!-- Display Top 10 Longest Played Games -->
+    <% @favorite_library_entries.each do |library_entry| %>
+      <%= render 'library_entries/blurb', { library_entry: library_entry } %>
+    <% end %>
+  </div>
+</div>
 
 <h2>What Your Friends are Up To</h2>
 
 <% @watched_steam_profiles.each do |watched_steam_profile| %>
   <h3><%= watched_steam_profile.vanity_name %></h3>
-
-  <h4>Recent Games</h4>
-  <% watched_steam_profile.library_entries.recent.each do |library_entry| %>
-    <%= render 'library_entries/blurb', { library_entry: library_entry } %>
-  <% end %>
-
-  <h4>Favorite Games</h4>
-  <% watched_steam_profile.library_entries.favorites.each do |library_entry| %>
-    <%= render 'library_entries/blurb', { library_entry: library_entry } %>
-  <% end %>
+  <div class="grid-row stand-out">
+    <div class="grid-column">
+      <h4>Recent Games</h4>
+      <% watched_steam_profile.library_entries.recent.each do |library_entry| %>
+        <%= render 'library_entries/blurb', { library_entry: library_entry } %>
+      <% end %>
+    </div>
+    <div class="grid-column">
+      <h4>Favorite Games</h4>
+      <% watched_steam_profile.library_entries.favorites.each do |library_entry| %>
+        <%= render 'library_entries/blurb', { library_entry: library_entry } %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 
 <% if @watched_steam_profiles.count == 0 %>

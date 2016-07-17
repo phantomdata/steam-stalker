@@ -10,8 +10,19 @@ a {
   color: #7599e0;
 }
 
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
 h2 {
   color: white;
+  font-weight: 700;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #797e9e;
 }
 
 #error_explanation {
@@ -34,6 +45,13 @@ h2 {
   color: #b9b7b7;
   font-size: 0.75em;
   line-height: 1.2em;
+}
+
+.logo {
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
 }
 
 /** Buttons **/
@@ -77,6 +95,7 @@ p {
   .header-navigation a {
     color: #cbd0e2;
     font-weight: bolder;
+    line-height: 2.8em;
     text-decoration: none;
   }
   .header-navigation li {
@@ -84,6 +103,18 @@ p {
     margin-left: 25px;
   }
 
+/** Basic Grid **/
+.grid-row {
+  display: flex;
+  flex-direction: row;
+}
+  .grid-row.stand-out {
+    background-color: #4a4e69;
+    padding: 0 10px 0 10px;
+  }
+.grid-column {
+  flex-grow: 1;
+}
 
 /** Form Stylings **/
 fieldset.small-form {

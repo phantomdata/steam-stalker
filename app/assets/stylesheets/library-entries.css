@@ -1,0 +1,31 @@
+.library-entry-blurb {
+  margin: 15px;
+}
+  .library-entry-blurb .header {
+    font-size: 1em;
+    font-weight: bolder;
+
+  }
+  .library-entry-blurb img {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .library-entry-blurb .hours-played {
+    color: white;
+    float: right;
+    font-weight: 900;
+    padding-top: 5px;
+    vertical-align: middle;
+
+    padding: 5px;
+    background-color: #656a88;
+  }
+  .library-entry-blurb .title {
+    display: inline-block;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+
+  }
