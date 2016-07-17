@@ -14,6 +14,28 @@ h2 {
   color: white;
 }
 
+#error_explanation {
+  background-color: #5d2121;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  padding: 10px 5px 10px 5px;
+}
+  #error_explanation h2 {
+    display: none;
+  }
+  #error_explanation ul {
+    list-style-type: none;
+  }
+  #error_explanation li {
+    line-height: 1.5em;
+  }
+
+.fine-print {
+  color: #b9b7b7;
+  font-size: 0.75em;
+  line-height: 1.2em;
+}
+
 /** Buttons **/
 .button { 
   background-color: #889fd4;
@@ -82,6 +104,9 @@ form { }
   }
   form .field {
     margin-bottom: 25px;
+  }
+  form .field_with_errors input {
+    border: 2px solid #b32c2c;
   }
 
 /** Registration Page **/
