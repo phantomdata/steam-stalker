@@ -1,12 +1,38 @@
 /** Global Stylings **/
 body {
   background-color: #1c2433;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
 
+a {
+  color: #7599e0;
+}
+
 h2 {
   color: white;
+}
+
+/** Buttons **/
+.button { 
+  background-color: #889fd4;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  padding: 10px;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  font-weight: 800; 
+  text-decoration: none; 
+}
+input.button { color: white; width:auto;display:inline;}
+input[type="submit"].button { border: 0;}
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 30px;
 }
 
 /** Page Stylings **/
@@ -38,11 +64,28 @@ h2 {
 
 
 /** Form Stylings **/
+fieldset.small-form {
+  background-color: #4a4e69;
+  border: 0;
+  margin: 0 auto;
+  max-width: 250px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+}
 form { }
   form input[type="text"], form input[type="email"], form input[type="password"] {
     padding: 10px;
     width: 200px;
   }
+  form label {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
   form .field {
     margin-bottom: 25px;
   }
+
+/** Registration Page **/
+.registration-links {
+  margin-top: 35px;
+  text-align: right;
+}
