@@ -3,7 +3,7 @@
 class LibraryEntry < ApplicationRecord
   belongs_to :game
 
-  scope :recent, lamda {
+  scope :recent, lambda {
     where(recently_played: true)
       .order('playtime_in_hours desc')
   }

@@ -83,10 +83,10 @@ p {
   color: #d8d8d8;
   margin: 65px auto;
   max-width: 720px;
-  padding: 50px;
+  padding: 10px 50px 10px 50px;
 }
 .header-navigation {
-  background-color: black;
+  background-color: #1b1c29;
   list-style-type: none;
   margin: 0;
   padding: 15px;
