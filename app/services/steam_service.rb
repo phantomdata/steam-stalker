@@ -1,5 +1,8 @@
 # An abstraction service for working with the ::SteamApi module within this
 # application.
+
+require 'steam_api'
+
 class SteamService
   class << self
     # Leverages the SteamApi to fetch and update the passed SteamProfile's
