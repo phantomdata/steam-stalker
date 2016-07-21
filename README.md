@@ -1,5 +1,4 @@
-[![CircleCI](https://circleci.com/gh/phantomdata/steam-stalker.svg?style=svg)](https://circleci.com/gh/phantomdata/steam-stalker) [![Code Climate](https://codeclimate.com/github/phantomdata/steam-stalker/badges/gpa.svg)](https://codeclimate.com/github/phantomdata/steam-stalker)
-# Steam Stalker
+# Steam Stalker [![CircleCI](https://circleci.com/gh/phantomdata/steam-stalker.svg?style=svg)](https://circleci.com/gh/phantomdata/steam-stalker) [![Code Climate](https://codeclimate.com/github/phantomdata/steam-stalker/badges/gpa.svg)](https://codeclimate.com/github/phantomdata/steam-stalker)
 
 ## Introduction
 
