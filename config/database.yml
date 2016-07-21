@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  database: phantom_games_dev
+  database: steam_stalker_dev
 
 test:
   <<: *default
-  database: phantom_games_test
+  database: steam_stalker_test
 
 production:
   <<: *default
