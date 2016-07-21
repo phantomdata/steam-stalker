@@ -27,7 +27,7 @@ end
 
 group :test do
   gem 'codeclimate-test-reporter', require: nil
-  gem 'minitest-ci', :git => 'git@github.com:circleci/minitest-ci.git'
+  gem 'minitest-ci', git: 'git@github.com:circleci/minitest-ci.git', require: false
   gem 'webmock'
   gem 'vcr'
 end
