@@ -1,7 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 
 require 'minitest/ci'
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
 require File.expand_path('../../config/environment', __FILE__)
