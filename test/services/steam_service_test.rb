@@ -50,7 +50,7 @@ class SteamServiceTest < ActiveSupport::TestCase
   test 'should retrieve steam_id from vanity_name' do
     VCR.use_cassette('steam_api_requests') do
       steam_id = SteamService.steam_id_for(TEST_USERNAME)
-      assert steam_id == TEST_STEAM_ID, "Invalid steam id returned"
+      assert steam_id == TEST_STEAM_ID, 'Invalid steam id returned'
     end
   end
 end
