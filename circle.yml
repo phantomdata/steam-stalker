@@ -3,6 +3,8 @@ deployment:
     branch: master
     heroku:
       appname: steam-stalker
+      command:
+        - heroku run rake db:migrate --app steam-stalker
 test:
   override:
     - bundle exec rails test
