@@ -6,6 +6,9 @@
     font-weight: bolder;
 
   }
+  .library-entry-blurb a {
+    color: white;
+  }
   .library-entry-blurb img {
     margin-right: 10px;
     vertical-align: middle;

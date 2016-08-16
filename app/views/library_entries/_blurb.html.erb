@@ -1,7 +1,9 @@
 <div class="library-entry-blurb">
   <div class="header">
     <%= image_tag(game_icon_url(library_entry.game)) %>
-    <span class="title"><%= library_entry.name %></span>
+    <span class="title">
+      <%= link_to library_entry.name, library_entry.store_link, target: '_blank' %>
+    </span>
     <span class="hours-played">
       <%= library_entry.playtime_in_hours %> hours
     </span>

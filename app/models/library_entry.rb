@@ -15,4 +15,5 @@ class LibraryEntry < ApplicationRecord
 
   delegate :name, to: :game
   delegate :icon_url, to: :game
+  delegate :store_link, to: :game
 end
