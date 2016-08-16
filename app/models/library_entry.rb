@@ -2,6 +2,7 @@
 # their games
 class LibraryEntry < ApplicationRecord
   belongs_to :game
+  belongs_to :steam_profile
 
   scope :recent, lambda {
     where(recently_played: true)

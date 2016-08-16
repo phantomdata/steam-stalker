@@ -33,7 +33,9 @@ class SteamService
     # Given the passed in parameters, this method upserts the specified library
     # entry.  Ensuring that it is updated if it exists, or created if not.
     def upsert_library_entry(game, playtime, recent_game, steam_profile)
-      library_entry = LibraryEntry.find_or_initialize_by(game_id: game.id)
+      library_entry = LibraryEntry.find_or_initialize_by(
+        game_id: game.id,
+        steam_profile_id: steam_profile.id)
       library_entry.playtime_in_hours = playtime / 60
       library_entry.recently_played = !recent_game.nil?
       library_entry.steam_profile_id = steam_profile.id
