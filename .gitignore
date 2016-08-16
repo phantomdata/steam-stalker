@@ -25,3 +25,5 @@
 *.DS_Store*
 test/reports/*
 coverage/*
+
+.idea/*
