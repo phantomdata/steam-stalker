@@ -33,7 +33,7 @@ class SteamProfileTest < ActiveSupport::TestCase
       u = users(:one)
       p = u.steam_profile
       p.update_library
-      assert p.recent_games.count == 13, 'Incorrect recent games returned'
+      assert p.recent_games.count == 14, 'Incorrect recent games returned'
     end
   end
 end

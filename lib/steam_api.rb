@@ -11,9 +11,9 @@ module SteamApi
     API_KEY = ENV['STEAM_API_KEY']
     BASE_URI = 'http://api.steampowered.com'.freeze
 
-    ALL_GAMES_API_URL="#{BASE_URI}/IPlayerService/GetOwnedGames/v0001".freeze
-    RECENT_GAMES_API_URL="#{BASE_URI}/IPlayerService/GetRecentlyPlayedGames/v0001".freeze
-    STEAM_ID_API_URL="#{BASE_URI}/ISteamUser/ResolveVanityURL/v0001".freeze
+    ALL_GAMES_API_URL = "#{BASE_URI}/IPlayerService/GetOwnedGames/v0001".freeze
+    RECENT_GAMES_API_URL = "#{BASE_URI}/IPlayerService/GetRecentlyPlayedGames/v0001".freeze
+    STEAM_ID_API_URL = "#{BASE_URI}/ISteamUser/ResolveVanityURL/v0001".freeze
 
     # This method queries the Steam API and returns a JSON representation of
     # the given steam_id's entire game library.  Full game info is intentionally
@@ -23,7 +23,9 @@ module SteamApi
     # Return format:
     #   { "appid": 2200, "playtime_forever": 42 }
     def all_games_for(steam_id)
-      params = { steamid: steam_id, include_appinfo: 1 }
+      params = { steamid: steam_id,
+                 include_appinfo: 1,
+                 include_played_free_games: 1 }
       response = steam_get(ALL_GAMES_API_URL, params)
 
       response['games']
