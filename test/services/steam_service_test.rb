@@ -17,7 +17,7 @@ class SteamServiceTest < ActiveSupport::TestCase
       assert user.steam_profile.library_entries.count == 652,
         "Not enough library entries read."
       assert game.name == 'Dota 2 Workshop Tools Alpha'
-      assert game.icon_url == 'b6e72ff47d1990cb644700751eeeff14e0aba6dc'
+      assert game.icon_url == ''
     end
   end
 
